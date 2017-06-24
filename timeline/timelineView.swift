@@ -9,18 +9,20 @@
 import UIKit
 import EventKit
 
-class timelineView: UIView, UICollectionViewDataSource, infiniteCollectionViewDelegate {
+class timelineView: UIView, infiniteViewDataSource, infiniteViewDelegate {
     let datasource:timelineViewDatasource
     var layoutEngine = timelineLayoutEngine()
-    let collectionView: infiniteCollectionView
+    var mainView: infiniteView
     
     // MARK: ------------------
     // MARK: lifecycle
     public init(datasource:timelineViewDatasource){
         self.datasource = datasource
-        self.collectionView = infiniteCollectionView(withLayoutEngine: self.layoutEngine)
-        super.init(frame:.zero)
+        self.mainView = infiniteView(withLayoutEngine: layoutEngine, customization: { (collection) in
+            collection.register(timelineEventCell.self, forCellWithReuseIdentifier: timelineEventCell.identifier)
+        })
         
+        super.init(frame:.zero)
         self.setupViews()
     }
     
@@ -34,38 +36,31 @@ class timelineView: UIView, UICollectionViewDataSource, infiniteCollectionViewDe
     // MARK: ------------------
     // MARK: VIEWS
     func setupViews() {
-        self.collectionView.infiniteDelegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.register(timelineEventCell.self, forCellWithReuseIdentifier: timelineEventCell.identifier)
-        self.addSubview(self.collectionView)
+        self.mainView.delegate = self
+        self.mainView.dataSoruce = self
+        self.addSubview(self.mainView)
     }
     
     // MARK:: layouting
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.collectionView.frame = self.bounds
+        self.mainView.frame = self.bounds
     }
     
     // MARK: DATASOURCE
     func prepareData() {
         
     }
-    
+    func loadPages(_ newPages: [Int], allPages: [Int]) {
+        
+    }
+        
     // MARK:: UICollectionViewDataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Int(self.layoutEngine.numLoadedPages * self.layoutEngine.numSectionsInPage)
+    func infinteViewNumberOfEvents(_ infinteView: infiniteView, inPage: Int, section: Int) -> Int {
+        return 1
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: timelineEventCell.identifier, for: indexPath) as! timelineEventCell
+    func infinteViewLoadPages(_ infinteView: infiniteView, allPages: [Int]) {
         
-        cell.laTitle.text = String(indexPath.row)
-        
-        
-        return cell
     }
 }
 

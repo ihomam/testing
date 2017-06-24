@@ -13,7 +13,7 @@
 		36D550361EFD6C2C009586FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D550351EFD6C2C009586FA /* Assets.xcassets */; };
 		36D550391EFD6C2C009586FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36D550371EFD6C2C009586FA /* LaunchScreen.storyboard */; };
 		36D550441EFD6D10009586FA /* timelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550431EFD6D10009586FA /* timelineView.swift */; };
-		36D550461EFD7716009586FA /* infiniteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550451EFD7716009586FA /* infiniteCollectionView.swift */; };
+		36D550461EFD7716009586FA /* infiniteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550451EFD7716009586FA /* infiniteView.swift */; };
 		36D550481EFE70CE009586FA /* layoutEngines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550471EFE70CE009586FA /* layoutEngines.swift */; };
 		36D5504A1EFE88BD009586FA /* timelineViewEventUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550491EFE88BD009586FA /* timelineViewEventUI.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		36D550381EFD6C2C009586FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36D5503A1EFD6C2C009586FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36D550431EFD6D10009586FA /* timelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timelineView.swift; sourceTree = "<group>"; };
-		36D550451EFD7716009586FA /* infiniteCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infiniteCollectionView.swift; sourceTree = "<group>"; };
+		36D550451EFD7716009586FA /* infiniteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infiniteView.swift; sourceTree = "<group>"; };
 		36D550471EFE70CE009586FA /* layoutEngines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layoutEngines.swift; sourceTree = "<group>"; };
 		36D550491EFE88BD009586FA /* timelineViewEventUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timelineViewEventUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,7 @@
 				36D550301EFD6C2C009586FA /* ViewController.swift */,
 				36D550431EFD6D10009586FA /* timelineView.swift */,
 				36D550491EFE88BD009586FA /* timelineViewEventUI.swift */,
-				36D550451EFD7716009586FA /* infiniteCollectionView.swift */,
+				36D550451EFD7716009586FA /* infiniteView.swift */,
 				36D550471EFE70CE009586FA /* layoutEngines.swift */,
 				36D550401EFD6C84009586FA /* New Group */,
 			);
@@ -157,7 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36D550461EFD7716009586FA /* infiniteCollectionView.swift in Sources */,
+				36D550461EFD7716009586FA /* infiniteView.swift in Sources */,
 				36D550311EFD6C2C009586FA /* ViewController.swift in Sources */,
 				36D5504A1EFE88BD009586FA /* timelineViewEventUI.swift in Sources */,
 				36D550481EFE70CE009586FA /* layoutEngines.swift in Sources */,

@@ -18,13 +18,35 @@ class infiniteLayoutEngine : UICollectionViewLayout {
     var scrollLayout:infiniteScrollLayout = .horizontal
     var numLoadedPages:UInt = 5
     var numDisplayedPages:UInt = 3
+    var numSectionsInPage: UInt = 1
+    // it's gonna be 0 if numLoadedPages = 5
+    var pagesLowerBound:UInt {
+        get {
+            return UInt(Double((self.numLoadedPages - self.numDisplayedPages)) * 0.5) - 1
+        }
+    }
+    // it's gonna be 4 if numLoadedPages = 5
+    var pagesUpperBound:UInt {
+        get {
+            // +1 because the indexs start from 0 man.
+            return self.pagesLowerBound + self.numDisplayedPages + 1;
+        }
+    }
+    
+    var pageSize: CGSize {get {return .zero}}
+    
+    func isVisiblePage(_ pageIndex:UInt) ->Bool {
+        if pageIndex > self.pagesLowerBound && pageIndex < self.pagesUpperBound {
+            return true
+        }
+        return false
+    }
 }
 
 class timelineLayoutEngine : infiniteLayoutEngine {
     var validLayout = false
     var pageHeight:CGFloat = 0.0
     var layoutInfo:[Int:[IndexPath:UICollectionViewLayoutAttributes]] = [:]
-    var numSectionsInPage: UInt = 1
     
     // MARK: ------------------
     //MARK: Lifecycle
@@ -108,14 +130,14 @@ class timelineLayoutEngine : infiniteLayoutEngine {
     
     
     // MARK: ------------------
-    var pageSize :CGSize {
+    override var pageSize :CGSize {
         get{
             guard let collectionView = collectionView else {
                 return .zero
             }
             
             if (self.pageHeight == 0) {
-                self.pageHeight = collectionView.frame.size.height*2;
+                self.pageHeight = collectionView.frame.size.height;
             }
             return CGSize(width: collectionView.frame.size.width, height: self.pageHeight)
         }
