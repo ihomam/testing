@@ -229,7 +229,7 @@ class infiniteView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         if scrollDirection == .toTheFuture {
             var newPages:[Int] = []
-            var startValue =  self.loadedPages[Int(self.layoutEngine.pagesUpperBound)-1]
+            var startValue =  self.loadedPages[Int(self.layoutEngine.pagesUpperBound)-1] - 1
             
             for i in 0..<loadedPagesCount {
                 var value = Int.max
@@ -256,7 +256,7 @@ class infiniteView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
                 newPages.append(value)
             }
             // becomes
-            // loadedPages = [9223372036854775807,-3,-2,-1,9223372036854775807]
+            // loadedPages = [9223372036854775807,-3,-2¨,-1,9223372036854775807]
             self.loadedPages = newPages
             self.dataSoruce?.infinteViewLoadPages(self, allPages: self.loadedPages)
         }
