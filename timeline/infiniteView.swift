@@ -216,6 +216,7 @@ class infiniteView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             }
             self.loadedPages.append(value)
         }
+        self.dataSoruce?.infinteViewLoadPages(self, allPages: self.loadedPages)
     }
     func scrollDatasource(_ scrollDirection:infiniteScrollDirection){
         guard scrollDirection != .none, loadedPages.count == Int(self.layoutEngine.numLoadedPages) else {

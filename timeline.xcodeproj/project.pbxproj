@@ -16,6 +16,7 @@
 		36D550461EFD7716009586FA /* infiniteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550451EFD7716009586FA /* infiniteView.swift */; };
 		36D550481EFE70CE009586FA /* layoutEngines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550471EFE70CE009586FA /* layoutEngines.swift */; };
 		36D5504A1EFE88BD009586FA /* timelineViewEventUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D550491EFE88BD009586FA /* timelineViewEventUI.swift */; };
+		36D5504C1EFFB456009586FA /* objectsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5504B1EFFB456009586FA /* objectsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		36D550451EFD7716009586FA /* infiniteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infiniteView.swift; sourceTree = "<group>"; };
 		36D550471EFE70CE009586FA /* layoutEngines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layoutEngines.swift; sourceTree = "<group>"; };
 		36D550491EFE88BD009586FA /* timelineViewEventUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timelineViewEventUI.swift; sourceTree = "<group>"; };
+		36D5504B1EFFB456009586FA /* objectsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = objectsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				36D550451EFD7716009586FA /* infiniteView.swift */,
 				36D550471EFE70CE009586FA /* layoutEngines.swift */,
 				36D550401EFD6C84009586FA /* New Group */,
+				36D5504B1EFFB456009586FA /* objectsStore.swift */,
 			);
 			path = timeline;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				36D550481EFE70CE009586FA /* layoutEngines.swift in Sources */,
 				36D5502F1EFD6C2C009586FA /* AppDelegate.swift in Sources */,
 				36D550441EFD6D10009586FA /* timelineView.swift in Sources */,
+				36D5504C1EFFB456009586FA /* objectsStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
